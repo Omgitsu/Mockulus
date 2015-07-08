@@ -46,8 +46,8 @@ The open source version of Mockul.us is the same as the one for sale with one ma
 
 ## Next Steps
 
-* [Guide to creating a Mockup](https://github.com/Omgitsu/Mockulus/blob/master/Docs/CreatingFrames.md)
-* [Guide to creating a Frame](https://github.com/Omgitsu/Mockulus/blob/master/Docs/CreatingMockups.md)
+* [Guide to creating a Mockup](https://github.com/Omgitsu/Mockulus/blob/master/Docs/CreatingMockups.md)
+* [Guide to creating a Frame](https://github.com/Omgitsu/Mockulus/blob/master/Docs/CreatingFrames.md)
 
 ## Communication
 
