@@ -77,7 +77,7 @@ The only images that are required for a mockup to fully function are the base im
 Below is an image that illustrates the proper sizing and positioning of the screen image.  In this example, the actual size of the device’s screen is 640x1136. Since the base image is *two times* the resolution, if you were to measure the pixels in an image editor it would show that the screen size is 1280x2272.  Accordingly, the proper origin for the screen is counted in points from the bottom left origin point (0,0) resulting in a position in points of (270,320).  If you were to measure in an image editor it would result in (540,640) - which is the incorrect placement.
 
 <p align="center" >
-  <img src="https://raw.github.com/Omgitsu/mockulus/Docs/assets/phone-measurements.png" alt=“Mockulus Phone Measurements” title="Mockulus Phone Measurements">
+  <img src="https://github.com/Omgitsu/Mockulus/blob/master/Docs/assets/phone-measurements.png?raw=true" alt=“Mockulus Phone Measurements” title="Mockulus Phone Measurements">
 </p>
 
 
@@ -88,7 +88,7 @@ When creating your base image for mockups take into account the height of the sh
 If you have to make space for a bottom shadow that is 100 pixels high, don't put the shadow at 0,-100.  Instead put the shadow at 0,0 and move the other images up by 100 pixels.  Images at negative positions won't display or save correctly.
 
 <p align="center" >
-  <img src="https://raw.github.com/Omgitsu/mockulus/Docs/assets/shadow-guideline.png" alt=“Mockulus Shadow Measurements” title="Mockulus Shadow Measurements">
+  <img src="https://github.com/Omgitsu/Mockulus/blob/master/Docs/assets/shadow-guideline.png?raw=true" alt=“Mockulus Shadow Measurements” title="Mockulus Shadow Measurements">
 </p>
 
 Because of the way that the base image is rotated negative 90 degrees, the landscape shadow file origin will be at the top left of the base image.  

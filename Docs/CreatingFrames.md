@@ -59,7 +59,7 @@ The following is an explanation of the fields in `Frames-Public.plist`.
 
 #### Measuring top_bar_height
 <p align="center" >
-  <img src="https://raw.github.com/Omgitsu/mockulus/Docs/assets/top-bar-height-demo.png" alt=“Mockulus Measuring Top Bar Height” title="Mockulus Measuring Top Bar Height">
+  <img src="https://github.com/Omgitsu/Mockulus/blob/master/Docs/assets/top-bar-height-demo.png?raw=true" alt=“Mockulus Measuring Top Bar Height” title="Mockulus Measuring Top Bar Height">
 </p>
 Top bar height is measured in points from the top of the base image top the top of the area for the imported image. This number should be the **50%** of the `Top` image slice in Xcode's image asset slicing tool.
 

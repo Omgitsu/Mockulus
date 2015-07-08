@@ -1,6 +1,7 @@
 
 <p align="center" >
-  <img src="https://raw.github.com/Omgitsu/mockulus/Assets/mockulus_logo.png" alt=“Mockulus” title=“Mockulus”>
+  <img src="https://github.com/Omgitsu/Mockulus/blob/master/Assets/moculus_logo.png?raw=true" alt=“Mockulus” title=“Mockulus”>
+  <img src="https://github.com/Omgitsu/Mockulus/blob/master/Docs/assets/mockulus-demo-image.png?raw=true" alt=“Mockulus” title=“Mockulus”>
 </p>
 
 ##### Mockulus is a program for OS X 10.10 and above that allows you to visualize your designs in mockups of devices and browsers.
@@ -45,8 +46,8 @@ The open source version of Mockul.us is the same as the one for sale with one ma
 
 ## Next Steps
 
-* [Guide to creating a Mockup](https://www.github.com/Omgitsu/mockulus/Docs/CreatingMockups.md)
-* [Guide to creating a Frame](https://www.github.com/Omgitsu/mockulus/Docs/CreatingFrames.md)
+* [Guide to creating a Mockup](https://github.com/Omgitsu/Mockulus/blob/master/Docs/CreatingFrames.md)
+* [Guide to creating a Frame](https://github.com/Omgitsu/Mockulus/blob/master/Docs/CreatingMockups.md)
 
 ## Communication
 
