@@ -438,7 +438,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MF;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = WDDG;
 				TargetAttributes = {
 					834D82C71AF17E4000B3819F = {
@@ -628,6 +628,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -703,6 +704,7 @@
 				);
 				INFOPLIST_FILE = Mockulus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.WDDG.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Mockulus;
 			};
 			name = Debug;
@@ -719,6 +721,7 @@
 				GCC_PREFIX_HEADER = Mockulus/Prefix.pch;
 				INFOPLIST_FILE = Mockulus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.WDDG.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Mockulus;
 			};
 			name = Release;
@@ -738,6 +741,7 @@
 				);
 				INFOPLIST_FILE = MockulusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.WDDG.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MockulusTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Framer2000.app/Contents/MacOS/Framer2000";
 			};
@@ -754,6 +758,7 @@
 				);
 				INFOPLIST_FILE = MockulusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.WDDG.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MockulusTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Framer2000.app/Contents/MacOS/Framer2000";
 			};
