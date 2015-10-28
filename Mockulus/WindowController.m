@@ -29,6 +29,8 @@
 #import "MFMainMenu.h"
 #import "MFScrollView.h"
 #import "MFUserDefaultsController.h"
+#import "MFDocument.h"
+#import "AppDelegate.h"
 
 NSInteger const kInitialWindowHeight = 500;
 NSInteger const kInitialWindowWidth = 500;
@@ -114,6 +116,12 @@ typedef NS_ENUM(NSInteger, WindowControllerControlPosition) {
     }
     if ([[notification name] isEqualToString:kNotificationSaveFileCompleted]) {
         [self enableSaveButton];
+    }
+    if ([[notification name] isEqualToString:kNotificationNewDocumentOpened]) {
+        [self displayWindow];
+    }
+    if ([[notification name] isEqualToString:kNotificationNewDocumentDroppedOntoAppIcon]) {
+        [self displayWindow];
     }
 }
 
@@ -248,6 +256,11 @@ typedef NS_ENUM(NSInteger, WindowControllerControlPosition) {
 }
 
 #pragma mark - Actions
+
+- (void)displayWindow
+{
+    [self.window makeKeyAndOrderFront:nil];
+}
 
 - (IBAction)toggleVisibility:(NSSegmentedControl*)sender
 {

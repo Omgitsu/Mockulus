@@ -31,6 +31,7 @@ extern NSString * const kTrademarkNotice;
 extern NSString * const kProjectURL;
 
 extern NSString * const kNotificationNewDocumentDroppedOntoAppIcon;
+extern NSString * const kNotificationApplicationLaunched;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 

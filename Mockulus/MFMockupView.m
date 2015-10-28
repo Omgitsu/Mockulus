@@ -236,7 +236,7 @@ CGFloat const kScalingFactorDefaultResolution = 1;
             [self handleStyleTypeChanged];
         }
         if ([[notification name] isEqualToString:kNotificationChangeDesktopColor]) {
-            [self drawMockupDesktopBackground];
+            [self drawMockupDesktopBackgroundAndNudge:YES];
         }
         if ([[notification name] isEqualToString:kNotificationChangeURLText]) {
             [self updateURLTextField:notification.object];
@@ -466,7 +466,7 @@ CGFloat const kScalingFactorDefaultResolution = 1;
     
     // screen desktop color fill
 
-    [self drawMockupDesktopBackground];
+    [self drawMockupDesktopBackgroundAndNudge:NO];
     
     
     
@@ -701,13 +701,17 @@ CGFloat const kScalingFactorDefaultResolution = 1;
 }
 
 
-- (void)drawMockupDesktopBackground
+- (void)drawMockupDesktopBackgroundAndNudge:(BOOL)nudge
 {
     NSPoint screenOrigin = self.currentMockup.screen.origin;
     NSSize screenSize = self.currentMockup.screen.size;
     
     if (self.landscapeMode) {
         NSRect rotatedRect = [self rectForRotatedRect:NSRectMake(screenOrigin, screenSize)];
+        if (nudge) {
+            CGFloat offset = self.currentMockup.bottomGutter / 4;
+            rotatedRect.origin.x = rotatedRect.origin.x + offset;
+        }
         screenOrigin = rotatedRect.origin;
         screenSize = rotatedRect.size;
     }
@@ -734,16 +738,12 @@ CGFloat const kScalingFactorDefaultResolution = 1;
     MFMockupImage *newBaseImage = self.currentMockup.baseImages[title];
     NSImage *mockupBaseImage = newBaseImage.image;
     
-    CGPoint origin = self.currentMockup.baseImage.frame.origin;
+    self.currentMockup.baseImage = newBaseImage;
     
     if (self.landscapeMode) {
         mockupBaseImage = [mockupBaseImage imageRotatedByDegrees:90];
-        CGFloat offset = self.currentMockup.bottomGutter / 4;
-        origin = self.mockupScreenImageView.frame.origin;
-        origin.x = origin.x + offset;
     }
     [self.mockupBaseImageView setImage:mockupBaseImage];
-    [self.mockupBaseImageView setFrameOrigin:origin];
     [self.mockupBaseImageView setFrameSize:mockupBaseImage.size];
     [self.mockupBaseImageView setNeedsDisplay];
         

@@ -55,6 +55,7 @@ NSString * const kNotificationNewDocumentOpened = @"A new document has been open
         readSuccess = YES;
         MFMockupImage *image = [MFMockupImage mockupImageWithImage:newImage fileName:fileName];
         [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdateMockup object:image];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationNewDocumentOpened object:nil];
     }
     return readSuccess;
 }

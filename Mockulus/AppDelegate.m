@@ -35,6 +35,13 @@ NSString * const kCopyrightNotice = @"Copyright © WDDG, Inc.";
 NSString * const kTrademarkNotice = @"Apple, the Apple logo, MacBook, MacBook Air, MacBook Pro, iMac, iPhone, iPad, Apple Watch, OS X, Thunderbolt Display and Safari are trademarks of Apple Inc., registered in the U.S. and other countries. All trademarks and registered trademarks are the property of their respective owners.";
 NSString * const kProjectURL = @"https://github.com/Omgitsu/mockulus";
 NSString * const kNotificationNewDocumentDroppedOntoAppIcon = @"A new document has been dropped onto the application icon";
+NSString * const kNotificationApplicationLaunched = @"Application Launched";
+
+// testing flags
+BOOL const kDebugResetUserDefaults = NO;
+BOOL const kDebugDeactivateLicense = NO;
+BOOL const kDebugLogUserDefaults = NO;
+
 
 @implementation AppDelegate
 
@@ -42,18 +49,10 @@ NSString * const kNotificationNewDocumentDroppedOntoAppIcon = @"A new document h
 
 + (void)initialize
 {
-    
-    BOOL resetDefaults = NO;
-    BOOL logUserDefaults = NO;
-    
-    if (resetDefaults) {
+    [self initDefaults];
+    if (kDebugResetUserDefaults) {
         [self resetUserDefaults];
     }
-    
-    [self checkAndSetUpDefaults];
-    
-    if (logUserDefaults) NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
-    
     [super initialize];
 }
 
@@ -76,6 +75,8 @@ NSString * const kNotificationNewDocumentDroppedOntoAppIcon = @"A new document h
     
     
     [window setFrame:rectNewFrame display:YES animate:NO];
+    
+    if (kDebugLogUserDefaults) NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
 
 }
 
@@ -106,16 +107,21 @@ NSString * const kNotificationNewDocumentDroppedOntoAppIcon = @"A new document h
 
 #pragma mark - User Defaults
 
-+ (void)resetUserDefaults
-{
-    MFUserDefaultsController *defaults = [MFUserDefaultsController sharedController];
-    [defaults deleteUserDefaults];
-}
-
-+ (void)checkAndSetUpDefaults
++ (void)initDefaults
 {
     MFUserDefaultsController *defaults = [MFUserDefaultsController sharedController];
     [defaults setMissingUserDefaultsToDefaultValues];
 }
+
+
++ (void)resetUserDefaults
+{
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    MFUserDefaultsController *defaults = [MFUserDefaultsController sharedController];
+    [defaults deleteUserDefaults];
+}
+
+
 
 @end
